@@ -1,0 +1,151 @@
+<?php
+
+session_start();
+
+
+if($_SESSION['firstBannerPriority'][0] == '') {
+    $_SESSION['firstBanner'] = '';
+}
+if($_SESSION['firstBanner']==''){
+    foreach($_SESSION['firstBannerPosition'] as $banner1){
+        for ($i = 0; $i < $banner1['banner_priority']; $i++) {
+            $priority1[] = $banner1['id'];
+        }
+    }
+    shuffle($priority1);
+    $_SESSION['firstBannerPriority'] = $priority1;
+    $_SESSION['firstBanner'] = 'Ok';
+}
+
+if($_SESSION['secondBannerPriority'][0] == '') {
+    $_SESSION['secondBanner'] = '';
+}
+if($_SESSION['secondBanner']==''){
+    foreach($_SESSION['secondBannerPosition'] as $banner2){
+        for ($i = 0; $i < $banner2['banner_priority']; $i++) {
+            $priority2[] = $banner2['id'];
+        }
+    }
+    shuffle($priority2);
+    $_SESSION['secondBannerPriority'] = $priority2;
+    $_SESSION['secondBanner'] = 'Ok';
+}
+
+
+if($_SESSION['thirdBannerPriority'][0] == '') {
+    $_SESSION['thirdBanner'] = '';
+}
+if($_SESSION['thirdBanner']==''){
+    foreach($_SESSION['thirdBannerPosition'] as $banner3){
+        for ($i = 0; $i < $banner3['banner_priority']; $i++) {
+            $priority3[] = $banner3['id'];
+        }
+    }
+    shuffle($priority3);
+    $_SESSION['thirdBannerPriority'] = $priority3;
+    $_SESSION['thirdBanner'] = 'Ok';
+}
+
+
+?>
+
+
+
+
+
+
+
+<div style="margin-top: 40px; margin-bottom: 70px" class="col-sm-12">
+    <div class="col-sm-4">
+        <b>Banner position № 1</b> <br><br>
+        <?php foreach($_SESSION['firstBannerPosition'] as $banner){
+        if ($banner['id']==$_SESSION['firstBannerPriority'][0]){?>
+        <img style="max-height: 200px" class="img-rounded" src="<?=$banner['banner_image']?>"
+             title="<?=$banner['banner_name'] ?>">
+    </div>
+    <?php
+
+    }
+    }
+    ?>
+
+    <div class="col-sm-4">
+        <b>Banner position № 2</b><br><br>
+        <?php foreach($_SESSION['secondBannerPosition'] as $banner){
+        if ($banner['id']==$_SESSION['secondBannerPriority'][0]){?>
+        <img style="max-height: 200px" class="img-rounded" src="<?=$banner['banner_image']?>"
+             title="<?=$banner['banner_name'] ?>">
+    </div>
+<?php
+
+}
+}
+?>
+
+
+    <div class="col-sm-4">
+        <b>Banner position № 3</b><br><br>
+        <?php foreach($_SESSION['thirdBannerPosition'] as $banner){
+        if ($banner['id']==$_SESSION['thirdBannerPriority'][0]){?>
+        <img style="max-height: 200px" class="img-rounded" src="<?=$banner['banner_image']?>"
+             title="<?=$banner['banner_name'] ?>">
+    </div>
+<?php
+
+}
+}
+?>
+</div>
+
+<br><br>
+
+
+
+<a href="/pages/add/"><button class="btn btn-sm btn-success">Add</button></a>
+<table class="table table-striped" style="width: 900px">
+    <caption>Banners:</caption>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>img</th>
+        <th>position</th>
+        <th>priority</th>
+    </tr>
+    <?php
+    $i=0;
+    foreach ($data['banners'] as $page_data) {
+        $i++;?>
+        <tr>
+            <td style="width: 70px"><?=$page_data['id']?></td>
+            <td style="width: 400px"><?=$page_data['banner_name']?></td>
+            <td style="width: 100px"><img style="max-height: 50px" src="<?=$page_data['banner_image']?>?>"></td>
+            <td style="width: 70px"><?=$page_data['banner_position']?></td>
+            <td style="width: 70px"><?=$page_data['banner_priority']?></td>
+            <td align="right">
+                <a href="/pages/edit/<?=$page_data['id']?>"><button class="btn btn-sm btn-primary">edit</button></a>
+                <a href="/pages/delete/<?=$page_data['id']?>" onclick="return confirmDelete()"><button class="btn btn-sm btn-warning">delete</button></a>
+            </td>
+        </tr>
+
+    <?php }
+
+    if($_SESSION['firstBannerPriority'][0] != ''){
+        $firstBannerId = $_SESSION['firstBannerPriority'];
+        array_shift($firstBannerId);
+        $_SESSION['firstBannerPriority'] = $firstBannerId;
+    }
+    if($_SESSION['secondBannerPriority'][0] != ''){
+        $secondBannerId = $_SESSION['secondBannerPriority'];
+        array_shift($secondBannerId);
+        $_SESSION['secondBannerPriority'] = $secondBannerId;
+    }
+    if($_SESSION['thirdBannerPriority'][0] != ''){
+        $thirdBannerId = $_SESSION['thirdBannerPriority'];
+        array_shift($thirdBannerId);
+        $_SESSION['thirdBannerPriority'] = $thirdBannerId;
+    }
+
+
+
+    ?>
+
