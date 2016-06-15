@@ -11,20 +11,20 @@ class Banners extends  Model
 
     public function getOnlyNeededBanners($bannerPosition)
     {
-        $sql= "SELECT * FROM banners WHERE banner_position = '{$bannerPosition}'";
+        $sql= "SELECT * FROM fresh_design_banners WHERE banner_position = '{$bannerPosition}'";
         return $this->db->query($sql);
     }
 
     public function getAllBanners()
     {
-        $sql = "SELECT * FROM banners";
+        $sql = "SELECT * FROM fresh_design_banners";
         return $this->db->query($sql);
     }
 
     public function getById($id)
     {
         $id = (int)$id;
-        $sql = "SELECT * FROM banners where id = '{$id}' limit 1";
+        $sql = "SELECT * FROM fresh_design_banners where id = '{$id}' limit 1";
         $result = $this->db->query($sql);
         return isset($result[0]) ? $result[0] : null;
     }
@@ -41,7 +41,7 @@ class Banners extends  Model
 
         if (!$id) { // Add new record
             $sql = "
-                    INSERT INTO banners
+                    INSERT INTO fresh_design_banners
                     set banner_name = '{$name}',
                         banner_image = '{$image}',
                         `banner_position` = '{$position}',
@@ -49,7 +49,7 @@ class Banners extends  Model
             ";
         } else {// Update existing record
             $sql = "
-                    UPDATE banners
+                    UPDATE fresh_design_banners
                     set banner_name = '{$name}',
                         banner_image = '{$image}',
                         `banner_position` = '{$position}',
@@ -63,7 +63,7 @@ class Banners extends  Model
     public function delete($id)
     {
         $id = (int)$id;
-        $sql = "DELETE FROM banners WHERE id = '{$id}'";
+        $sql = "DELETE FROM fresh_design_banners WHERE id = '{$id}'";
         return $this->db->query($sql);
     }
 
