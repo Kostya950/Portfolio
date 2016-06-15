@@ -61,14 +61,14 @@
              } else {
                  Session::setFlash('Error.');
              }
-             Router::redirect('/pages/');
+             Router::redirect('/pages/fresh_design/');
          }
 
          if(isset($this->params[0])) {
              $this->data['banner'] = $this->model->getById($this->params[0]);
          } else {
              Session::setFlash('Wrong page id.');
-             Router::redirect('/pages/');
+             Router::redirect('/pages/fresh_design/');
          }
 
      }
@@ -83,7 +83,7 @@
              } else {
                  Session::setFlash('Error.');
              }
-             Router::redirect('/pages/');
+             Router::redirect('/pages/fresh_design/');
          }
      }
 
@@ -96,7 +96,7 @@
              } else {
                  Session::setFlash('Error.');
              }
-             Router::redirect('/pages/');
+             Router::redirect('/pages/fresh_design/');
 
          }
      }
