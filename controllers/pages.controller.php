@@ -16,11 +16,11 @@
 
      }
 
-     public function index(){
-
+     public function fresh_design()
+     {
          session_start();
 
-     $this->data['banners'] = $this->model->getAllBanners();
+         $this->data['banners'] = $this->model->getAllBanners();
 
          if($_SESSION['firstBannerPosition'] == ''){
              $_SESSION['firstBannerPosition'] = $this->model->getOnlyNeededBanners(1);
@@ -33,6 +33,13 @@
          if($_SESSION['thirdBannerPosition'] == ''){
              $_SESSION['thirdBannerPosition'] = $this->model->getOnlyNeededBanners(3);
          }
+
+     }
+
+     public function index()
+     {
+
+        
 
      }
 
