@@ -9,7 +9,7 @@ if (isset($_POST)){
 
         $sth = $dbh->query("SELECT * FROM expert_cc_desks WHERE `id_callcenter`= '{$get_call}'");
         $cat = $sth->fetchAll(PDO::FETCH_ASSOC);
-        echo "<option></option>";
+        echo "<option>1</option>";
         foreach ($cat as $item) {
             echo "<option value='{$item['id']}'>{$item['desk_name']}</option>";
         }
