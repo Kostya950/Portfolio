@@ -12,11 +12,11 @@
     </div>
 </nav>
 
+<?php
 
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // превращаем ошибки в исключения
-$dbh->query("SET NAMES utf8");
-$sth = $dbh->query("SELECT * FROM cc_callcenters");
-$callCenters = $sth->fetchAll(PDO::FETCH_ASSOC);
+$db =  new DB(Config::get('db.host'), Config::get('db.user'), Config::get('db.password'), Config::get('db.db_name'));
+$sql = "SELECT * FROM `expert_cc_callcenters`";
+$callCenters = $db->query($sql);
 function callCenters($callCenters) {
 foreach ($callCenters as $key => $callCenter) {
 echo "<option value='{$callCenter['id']}'>{$callCenter['name']}</option>";
