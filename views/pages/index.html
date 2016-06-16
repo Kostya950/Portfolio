@@ -27,7 +27,7 @@
     <div class="col-sm-12">
         <div class="col-sm-12 h3 text-center"><?=__('hello')?></div>
         <div class="col-sm-12 h4 text-justify text_indent"><?=__('about_me')?></div>
-        <div class="col-sm-12 h4 text-justify text_indent"><?=__('goal')?></div>
+        <div class="col-sm-12 h4 text-justify text_indent"><?=__('goal')?></div><br>
         <div class="col-sm-6 text-muted text-center"><span class="h3"><?=__('own_project')?></span><br><br>
             <a class='btn btn-success' data-toggle="modal" data-target="#pravo">Pravo</a>
             <div id="pravo" class="modal fade">
@@ -48,7 +48,39 @@
             </div>
         </div>
         <div class="col-sm-6 text-muted text-center"><span class="h3"><?=__('test_tasks')?></span><br><br>
-            <a class="btn btn-danger" href="/pages/fresh_design/">Fresh-Design</a><br><br>
+
+            <a class='btn btn-success' data-toggle="modal" data-target="#fresh-design">Fresh-Design</a>
+            <div id="fresh-design" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                            <h4 class="modal-title text-info text-left"> Тестовое задание</h4>
+                        </div>
+                        <div class="modal-body text-left">
+                            <div class="h5 text-justify text_indent">
+                                Необходимо реализовать систему выборки баннеров для отображения на баннерной позиции со
+                                следующими условиями:
+                                1. На каждой баннерной позиции может быть одновременно отображен только 1 баннер
+                                2. При этом для каждой баннерной позиции может быть задан как один, так и несколько
+                                баннеров
+                                3. Каждый баннер обладает определенным приоритетом - от 1 до 10. При этом баннер с
+                                приоритетом 10 должен быть показан в 10 раз чаще, чем баннер с приоритетом 1 при прочих
+                                равных условиях
+                                4. Баннера для показа должны выбираться по псевдо случайному алгоритму, т.е. чтобы подряд
+                                один и тот же баннер по возможности не отображался
+                                5. На определенных позициях баннера может не быть баннеров с определенным приоритетом
+                                (1-10 и т.д.)
+                                Задача - реализовать алгоритм выбора баннера, наиболее соответствующий заданным
+                                требованиям, при этом важно минимизировать количество обращений к базе данных для
+                                выборки баннеров для показа. </div><br>
+                            <span class="text-muted h5">Link:</span>
+                            <a href="/pages/fresh_design/" class="text-info h5">fresh-design</a><br>
+                            <span class="text-muted h5">GitHub:</span>
+                            <a href="https://github.com/Kostya950/Portfolio/blob/master/views/pages/fresh_design.html" class="text-info h5">watch</a><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a class="btn btn-info" href="/pages/expert/">Expert</a>
         </div>
     </div>

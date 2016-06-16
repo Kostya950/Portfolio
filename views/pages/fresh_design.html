@@ -7,17 +7,12 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-
-
             </ul>
         </div>
     </div>
 </nav>
 <?php
-
 session_start();
-
-
 if($_SESSION['firstBannerPriority'][0] == '') {
     $_SESSION['firstBanner'] = '';
 }
@@ -31,7 +26,6 @@ if($_SESSION['firstBanner']==''){
     $_SESSION['firstBannerPriority'] = $priority1;
     $_SESSION['firstBanner'] = 'Ok';
 }
-
 if($_SESSION['secondBannerPriority'][0] == '') {
     $_SESSION['secondBanner'] = '';
 }
@@ -45,8 +39,6 @@ if($_SESSION['secondBanner']==''){
     $_SESSION['secondBannerPriority'] = $priority2;
     $_SESSION['secondBanner'] = 'Ok';
 }
-
-
 if($_SESSION['thirdBannerPriority'][0] == '') {
     $_SESSION['thirdBanner'] = '';
 }
@@ -60,22 +52,19 @@ if($_SESSION['thirdBanner']==''){
     $_SESSION['thirdBannerPriority'] = $priority3;
     $_SESSION['thirdBanner'] = 'Ok';
 }
-
-
 ?>
-
 <div style="margin-top: 40px; margin-bottom: 70px" class="col-sm-12">
     <div class="col-sm-4">
         <b>Banner position № 1</b> <br><br>
-        <?php foreach($_SESSION['firstBannerPosition'] as $banner){
-        if ($banner['id']==$_SESSION['firstBannerPriority'][0]){?>
-        <img style="max-height: 200px" class="img-rounded" src="<?=$banner['banner_image']?>"
-             title="<?=$banner['banner_name'] ?>">
-    </div>
+        <?php
+        foreach($_SESSION['firstBannerPosition'] as $banner){
+            if ($banner['id']==$_SESSION['firstBannerPriority'][0]){?>
+            <img style="max-height: 200px" class="img-rounded" src="<?=$banner['banner_image']?>"
+                 title="<?=$banner['banner_name'] ?>">
+            </div>
     <?php
-
-    }
-    }
+            }
+        }
     ?>
 
     <div class="col-sm-4">
@@ -90,8 +79,6 @@ if($_SESSION['thirdBanner']==''){
 }
 }
 ?>
-
-
     <div class="col-sm-4">
         <b>Banner position № 3</b><br><br>
         <?php foreach($_SESSION['thirdBannerPosition'] as $banner){
@@ -104,12 +91,7 @@ if($_SESSION['thirdBanner']==''){
 }
 }
 ?>
-</div>
-
-<br><br>
-
-
-
+</div><br><br>
 <a href="/pages/add/"><button class="btn btn-sm btn-success">Add</button></a>
 <table class="table table-striped" style="width: 900px">
     <caption>Banners:</caption>
@@ -137,7 +119,6 @@ if($_SESSION['thirdBanner']==''){
         </tr>
 
     <?php }
-
     if($_SESSION['firstBannerPriority'][0] != ''){
         $firstBannerId = $_SESSION['firstBannerPriority'];
         array_shift($firstBannerId);
@@ -153,8 +134,5 @@ if($_SESSION['thirdBanner']==''){
         array_shift($thirdBannerId);
         $_SESSION['thirdBannerPriority'] = $thirdBannerId;
     }
-
-
-
     ?>
 
