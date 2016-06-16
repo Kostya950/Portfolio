@@ -24,7 +24,7 @@
 
      public function fresh_design()
      {
-         header("Refresh:10");
+         header("Refresh:5");
          session_start();
 
          $this->data['banners'] = $this->model->getAllBanners();
@@ -101,18 +101,6 @@
 
          }
      }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
      public function view() {

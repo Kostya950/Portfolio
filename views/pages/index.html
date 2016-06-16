@@ -48,7 +48,6 @@
             </div>
         </div>
         <div class="col-sm-6 text-muted text-center"><span class="h3"><?=__('test_tasks')?></span><br><br>
-
             <a class='btn btn-danger' data-toggle="modal" data-target="#fresh-design">Fresh-Design</a>
             <div id="fresh-design" class="modal fade">
                 <div class="modal-dialog">
@@ -85,8 +84,29 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div><br>
             <a class="btn btn-info" href="/pages/expert/">Expert</a>
+
+            <a class='btn btn-info' data-toggle="modal" data-target="#expert">Expert</a>
+            <div id="expert" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                            <h4 class="modal-title text-info text-left"> Expert</h4>
+                        </div>
+                        <div class="modal-body text-left">
+                            <div class="h5 text-justify text_indent">
+                            Используя AJAX реализовать подтягивание данных из базы в зависимости от выбранного пункта
+                                выпадающего списка для все полей. При удалении значения из верхнего списка нижние должны
+                                так же очищатся.
+                            </div><br>
+                            <span class="text-muted h5">Link:</span>
+                            <a href="/pages/expert/" class="text-info h5">expert</a><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
