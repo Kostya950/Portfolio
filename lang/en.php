@@ -7,5 +7,5 @@
  */
 
 return array (
-    'hello' => 'Hello Guys!'
+    'hello' => 'Hello guys!'
 );
