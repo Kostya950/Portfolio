@@ -14,7 +14,7 @@ return array (
     'goal' => 'I really want to work and grow up, together with a strong and ambitious team!',
     'own_project' => 'Own project:',
     'test_tasks' => 'Test tasks:',
-    'pravo' => 'This is my own project - "Card of legislation files." Here is implemented the search of the different
+    'pravo' => 'This is my own project - "Card file of legislation." Here is implemented the search of the different
     documents by such parameters as date, number, publisher, type document and others. Also you can look through
     documents after selecting one of the sections of the classifier. The administrator has rights for section with
     editing files.'
