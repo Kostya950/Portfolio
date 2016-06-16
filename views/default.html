@@ -14,21 +14,7 @@
           integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
   </script>
   <script src="/js/jquery-1.12.1.min.js"></script>
-  <script>
-    function fetch_select(name,value)
-    {
-      $.ajax({
-        type: 'post',
-        url: 'j..s/ajax_search_functions.php',
-        data: {
-          name, value
-        },
-        success: function (response) {
-          document.getElementById(name).innerHTML=response;
-        }
-      });
-    }
-  </script>
+
 </head>
 <body>
   <div class="container">
