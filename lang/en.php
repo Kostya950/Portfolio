@@ -13,5 +13,8 @@ return array (
      beginning and brought to the implementation and use. Also here you can find some executed test tasks!',
     'goal' => 'I really want to work and grow up, together with a strong and ambitious team!',
     'own_project' => 'Own project:',
-    'test_tasks' => 'Test tasks:'
+    'test_tasks' => 'Test tasks:',
+    'pravo' => 'Это мой собственный проект - "Картотека законодательных актов". Реализован поиск документов по разным
+     параметрам таким как дата, номер, издатель, вид докуманта и другие. Так же можно просматривать документы непосредственно
+     выбрав один из раделов классификатора. Для администратора достуен раздел добавления/редактирования/удаления актов из базы.'
 );
