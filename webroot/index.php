@@ -19,5 +19,5 @@ try {
     App::run($_SERVER['REQUEST_URI']);
 } catch (Exception $e) {
     echo $e->getMessage();
-//    Router::redirect(PRELINK);
+//    Router::redirect(/pages/);
 }
