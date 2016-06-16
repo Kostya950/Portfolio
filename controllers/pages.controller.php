@@ -24,6 +24,7 @@
 
      public function fresh_design()
      {
+         header("Refresh:10");
          session_start();
 
          $this->data['banners'] = $this->model->getAllBanners();
