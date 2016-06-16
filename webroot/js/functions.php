@@ -1,5 +1,4 @@
 <script>
-    alert(1);
     function fetch_select(name,value)
     {
         $.ajax({
