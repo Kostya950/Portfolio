@@ -12,3 +12,64 @@
     </div>
 </nav>
 
+
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // превращаем ошибки в исключения
+$dbh->query("SET NAMES utf8");
+$sth = $dbh->query("SELECT * FROM cc_callcenters");
+$callCenters = $sth->fetchAll(PDO::FETCH_ASSOC);
+function callCenters($callCenters) {
+foreach ($callCenters as $key => $callCenter) {
+echo "<option value='{$callCenter['id']}'>{$callCenter['name']}</option>";
+}
+}
+?>
+
+<div class="col-sm-offset-3 col-sm-3">
+    <table class="table">
+        <caption >Assignment</caption>
+        <tr>
+            <td>Call centr:</td>
+            <td><select class="form-control" name="new1" onchange="fetch_select(this.name,this.value);
+             $('#desk').css('display','table-row'); $('#team,#sales,#status,#send').css('display','none');
+             if(this.value ==0){$('#desk').css('display','none');}">
+                    <option></option>
+                    <?php callCenters($callCenters); ?>
+                </select>
+            </td>
+        </tr>
+        <tr id="desk">
+            <td>Desk:</td>
+            <td><select class="form-control" id="new1" name="new2" onchange="fetch_select(this.name,this.value);
+            $('#team').css('display','table-row'); $('#sales,#status,#send').css('display','none');
+            if(this.value ==0){$('#team').css('display','none');}">
+                </select>
+            </td>
+        </tr>
+        <tr id="team">
+            <td>Team:</td>
+            <td><select class="form-control" id="new2" name="new3" onchange="fetch_select(this.name,this.value);
+             $('#sales').css('display','table-row'); $('#status,#send').css('display','none');
+             if(this.value ==0){$('#sales').css('display','none');}">
+                </select></td>
+        </tr>
+        <tr id="sales">
+            <td>Sales:</td>
+            <td><select class="form-control" id="new3" name="new4" onchange="fetch_select(this.name,this.value);
+            $('#status').css('display','table-row');$('#send').css('display','none');
+            if(this.value ==0){$('#status').css('display','none');}">
+                </select></td>
+        </tr>
+        <tr id="status">
+            <td>Lead status:</td>
+            <td><select class="form-control" id="new4" onchange="$('#send').css('display','table-row')">
+                </select></td>
+        </tr>
+        <tr id="send">
+            <td colspan="2"><input  class="btn btn-success" type="submit"></td>
+            <td></td>
+        </tr>
+    </table>
+    <div id="id"></div>
+</div>
+</body>
+</html>

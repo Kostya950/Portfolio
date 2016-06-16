@@ -29,3 +29,13 @@ form {
 .text_indent {
     text-indent: 40px;
 }
+
+.form-control {
+    width: 200px;
+}
+#team, #desk, #sales, #status, #send{
+    display: none;
+}
+.btn-success {
+    float: right;
+}
