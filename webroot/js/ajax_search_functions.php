@@ -1,4 +1,5 @@
 <?php
+echo 1;
 if (isset($_POST)){
     $get_call = $_POST['value'];
     $get_desk = $_POST['value'];
