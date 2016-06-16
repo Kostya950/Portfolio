@@ -1,5 +1,7 @@
 <?php
+include "../../lib/db.class.php";
 $db =  new DB('mysql.hostinger.com.ua', 'u989276726_fresh', '111111', 'u989276726_fresh');
+
 if (isset($_POST)){
     $get_call = $_POST['value'];
     $get_desk = $_POST['value'];

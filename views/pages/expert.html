@@ -15,7 +15,7 @@
 <?php
 
 $db =  new DB(Config::get('db.host'), Config::get('db.user'), Config::get('db.password'), Config::get('db.db_name'));
-$sql = "SELECT * FROM `expert_cc_callcenters`";
+$sql = "SELECT * FROM `expert_cc_callcenter`";
 $callCenters = $db->query($sql);
 function callCenters($callCenters) {
 foreach ($callCenters as $key => $callCenter) {
