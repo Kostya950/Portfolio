@@ -7,5 +7,5 @@
  */
 
 return array (
-    'about_me' => 'Вем привет!'
+    'hello' => 'Вем привет!'
 );

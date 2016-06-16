@@ -19,3 +19,8 @@ form {
 .img_size {
     width: 200px;
 }
+
+.language {
+    padding-top: 20px;
+    float: right;
+}
